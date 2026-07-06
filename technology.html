@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Technology | Solid State Pharma</title>
+  <meta name="description" content="A closer look at the technology and instrumentation at Solid State Pharma.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="technologies">
+
+  <section class="page-hero">
+    <div class="container">
+      <span class="eyebrow" style="color:rgba(255,255,255,0.85);">Technologies</span>
+      <h1 id="tech-title">Technology</h1>
+      <p id="tech-tagline"></p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="tech-detail-hero">
+        <img id="tech-image" src="" alt="">
+      </div>
+      <div class="tech-detail-body" style="margin-top: 44px;" id="tech-body"></div>
+      <div style="margin-top: 40px;">
+        <a href="technologies.html" class="btn btn-outline">&larr; Back to All Technologies</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <div class="container">
+      <h2>Ready to collaborate?</h2>
+      <p>Let&rsquo;s work together.</p>
+      <a href="mailto:info@solidstatepharma.com" class="btn btn-white">Get In Touch</a>
+    </div>
+  </section>
+
+  <script src="js/main.js"></script>
+  <script>
+    (function () {
+      var techData = {
+        "pxrd": {
+          title: "Powder X-Ray Diffractometers",
+          tagline: "The definitive technique for identifying crystalline solid forms.",
+          image: "images/powder x-ray diffractometers.png",
+          body:
+            "<p>Powder X-ray diffraction (PXRD) is the gold-standard technique for identifying and distinguishing crystalline solid forms. Every polymorph, salt, and co-crystal produces a unique diffraction pattern &mdash; a fingerprint of its crystal structure.</p>" +
+            "<p>Our diffractometers are used throughout every screening and development program to:</p>" +
+            "<ul>" +
+            "<li>Identify polymorphs, salts, co-crystals, hydrates, and solvates</li>" +
+            "<li>Confirm form purity and detect form conversion</li>" +
+            "<li>Quantify polymorphs in solid mixtures using multivariate analysis</li>" +
+            "<li>Support regulatory filings with high-quality diffraction data</li>" +
+            "</ul>"
+        },
+        "particle-size": {
+          title: "Particle Size",
+          tagline: "Accurate particle size distribution measurement for consistent drug substance quality.",
+          image: "images/Particle Size.jpg",
+          body:
+            "<p>Particle size distribution has a direct impact on dissolution, bioavailability, filterability, flowability, and downstream formulation performance. Understanding and controlling it is central to our particle engineering services.</p>" +
+            "<p>Our particle size capabilities allow us to:</p>" +
+            "<ul>" +
+            "<li>Measure particle size distributions with precision and reproducibility</li>" +
+            "<li>Monitor particle size evolution during crystallization development</li>" +
+            "<li>Optimize morphology and particle size distribution for target specifications</li>" +
+            "<li>Support consistent, scalable drug substance quality</li>" +
+            "</ul>"
+        },
+        "crystallization": {
+          title: "Crystallization Development",
+          tagline: "Controlled reactor platforms and in-situ analytics for robust, scalable processes.",
+          image: "images/Crystallization Development.jpg",
+          body:
+            "<p>Developing a robust crystallization process requires precise control over temperature, supersaturation, seeding, and mixing &mdash; and the ability to observe what is happening inside the reactor in real time.</p>" +
+            "<p>Our crystallization development platforms enable us to:</p>" +
+            "<ul>" +
+            "<li>Run precisely controlled cooling, anti-solvent, and evaporative crystallizations</li>" +
+            "<li>Monitor processes in-situ with process analytical technology (PAT)</li>" +
+            "<li>Develop seeding strategies and control polymorphic outcome</li>" +
+            "<li>Design processes that scale reliably from lab to manufacturing</li>" +
+            "</ul>"
+        },
+        "thermal": {
+          title: "Thermal Analysis",
+          tagline: "Understanding melting behavior, phase transitions, and form stability.",
+          image: "images/Thermal Analysis.jpg",
+          body:
+            "<p>Thermal analysis reveals how a solid form behaves as a function of temperature &mdash; essential knowledge for selecting and developing the right form of an API.</p>" +
+            "<p>Our thermal analysis instrumentation is used to:</p>" +
+            "<ul>" +
+            "<li>Characterize melting points, glass transitions, and phase transitions</li>" +
+            "<li>Detect desolvation and dehydration events</li>" +
+            "<li>Establish the thermodynamic relationships between polymorphs</li>" +
+            "<li>Assess the stability of solid forms under thermal stress</li>" +
+            "</ul>"
+        },
+        "other": {
+          title: "Other Equipment",
+          tagline: "A full complement of supporting analytical and processing capabilities.",
+          image: "images/Other Equipment.jpg",
+          body:
+            "<p>Beyond our core platforms, our laboratory houses a full complement of supporting analytical and processing equipment that rounds out our capabilities across screening, characterization, and process development.</p>" +
+            "<p>This supporting equipment enables:</p>" +
+            "<ul>" +
+            "<li>Comprehensive solid state characterization of APIs</li>" +
+            "<li>Physicochemical property determination, including pKa and Log P/D</li>" +
+            "<li>Sample preparation, isolation, and drying studies</li>" +
+            "<li>Flexible support for every stage of a client program</li>" +
+            "</ul>"
+        }
+      };
+
+      var params = new URLSearchParams(window.location.search);
+      var tech = techData[params.get("tech")] || techData["pxrd"];
+
+      document.title = tech.title + " | Solid State Pharma";
+      document.getElementById("tech-title").textContent = tech.title;
+      document.getElementById("tech-tagline").textContent = tech.tagline;
+      var img = document.getElementById("tech-image");
+      img.src = tech.image;
+      img.alt = tech.title;
+      document.getElementById("tech-body").innerHTML = tech.body;
+    })();
+  </script>
+</body>
+</html>
